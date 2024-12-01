@@ -96,6 +96,7 @@ The **Namokar Mantra Recitation Web App** incorporates guided breathing animatio
 4. **Enhanced Awareness**: Alternating breathing patterns sharpen focus and improve your ability to stay present.  
 
 By following this breathing pattern during the recitation, you create a holistic experience that integrates body, mind, and spirit, deepening the impact of the Namokar Mantra.
+
 ---
 
 ## 💡 Future Enhancements  
