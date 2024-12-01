@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Namokar Mantra </title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+
+    #mantra {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+	  margin-top: auto;
+     }
+
+    .highlight {
+      color: white;
+      text-shadow: 0 0 10px currentColor;
+    }
+
+    #controls {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    button {
+      font-size: 2rem;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      background: #ffffff00;
+      color: #ffffff;
+    }
+
+    #slider-container {
+      margin: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="range"] {
+      width: 300px;
+      margin: 0 10px;
+    }
+
+    #breathing-circle {
+      width: 100px;
+      height: 100px;
+      background: rgb(255 245 6 / 36%);
+      border-radius: 50%;
+	  margin: auto;
+    }
+
+    @keyframes inhale {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.5);
+      }
+    }
+
+    @keyframes exhale {
+      from {
+        transform: scale(1.5);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+ <!--   <h1>Namokar Mantra Recitation</h1> -->
+  <div id="mantra">Jai Jinendra🧘🏻</div>
+  <div id="breathing-circle"></div>
+  <div id="controls">
+    <button id="startStop">Start</button>
+    <p>Cycle Time: <span id="cycleTimeDisplay">18</span>s</p>
+    <div id="slider-container">
+      <label for="cycleSlider">Cycle Time:</label>
+      <input type="range" id="cycleSlider" min="3" max="48" step="1" value="18">
+    </div>
+    <p>Completed Cycles: <span id="cycleCount">0</span></p>
+  </div>
+
+  <script>
+    const mantraLines = [
+      "णमो अरिहंताणं",
+      "णमो सिद्धाणं",
+      "णमो आयरियाणं",
+      "णमो उवज्जायाणं",
+      "णमो लोए-सव्वसाहूणं"
+    ];
+    const mantraColors = ["red", "yellow", "white", "green", "cyan"];
+    const mantraElement = document.getElementById("mantra");
+    const breathingCircle = document.getElementById("breathing-circle");
+    const startStopButton = document.getElementById("startStop");
+    const cycleCountElement = document.getElementById("cycleCount");
+    const cycleSlider = document.getElementById("cycleSlider");
+    const cycleTimeDisplay = document.getElementById("cycleTimeDisplay");
+
+    let cycleTime = parseInt(cycleSlider.value, 10); // Initial cycle time in seconds
+    let cycleCount = 0;
+    let mantraTimeouts = [];
+    let isRunning = false;
+
+    cycleSlider.addEventListener("input", () => {
+      cycleTime = parseInt(cycleSlider.value, 10);
+      cycleTimeDisplay.textContent = cycleTime;
+    });
+
+function displayMantra() {
+  let index = 0;
+  const partTime = (cycleTime * 1000) / 6; // Time for the first 4 lines
+  const lastLineTime = 2 * partTime; // Total time for the last line
+
+  const showNextLine = () => {
+    if (index < mantraLines.length) {
+      // Display mantra line
+      mantraElement.textContent = mantraLines[index];
+      mantraElement.style.color = mantraColors[index];
+      mantraElement.classList.add("highlight");
+
+      // Breathing animation
+      if (index < 4) {
+        // For the first four lines: alternate inhale and exhale
+        let animationName = index % 2 === 0 ? "inhale" : "exhale";
+        breathingCircle.style.animation = `${animationName} ${partTime}ms linear forwards`;
+      } else {
+        // For the fifth line: inhale followed by exhale
+        breathingCircle.style.animation = `inhale ${partTime}ms linear forwards`;
+        const exhaleTimeout = setTimeout(() => {
+          breathingCircle.style.animation = `exhale ${partTime}ms linear forwards`;
+        }, partTime);
+        mantraTimeouts.push(exhaleTimeout);
+      }
+
+      // Move to the next line after the current line's display time
+      const timeout = setTimeout(() => {
+        mantraElement.classList.remove("highlight");
+        index++;
+        showNextLine();
+      }, index === 4 ? lastLineTime : partTime);
+
+      mantraTimeouts.push(timeout);
+    } else {
+      // Complete a cycle
+      cycleCount++;
+      cycleCountElement.textContent = cycleCount;
+      displayMantra();
+    }
+  };
+
+  showNextLine();
+}
+
+
+    startStopButton.addEventListener("click", () => {
+      if (isRunning) {
+        // Stop the animation and reset
+        mantraTimeouts.forEach(timeout => clearTimeout(timeout));
+        mantraTimeouts = [];
+        breathingCircle.style.animation = "none";
+        isRunning = false;
+        startStopButton.textContent = "▷";
+        mantraElement.textContent = "Paused";
+      } else {
+        // Start the animation
+        isRunning = true;
+        startStopButton.textContent = "||";
+        displayMantra();
+      }
+    });
+  </script>
+</body>
+</html>
