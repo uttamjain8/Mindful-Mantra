@@ -72,4 +72,4 @@ Empower your spiritual journey with the **Namokar Mantra Recitation Web App**. T
 
 --- 
 
-### 🌟 [Explore the App](https://your-live-app-link.com) 🌟 
+### 🌟 [Explore the App](https://uttamjain8.github.io/Mindful-Mantra/) 🌟 
