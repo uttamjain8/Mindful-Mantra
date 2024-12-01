@@ -57,6 +57,47 @@ Using this app to recite the Namokar Mantra integrates technology into your spir
 This app is your gateway to cultivating inner peace and mindfulness while staying connected to a centuries-old spiritual tradition.
 
 ---
+
+## 🧘‍♂️ Correct Breathing Pattern  
+
+The **Namokar Mantra Recitation Web App** incorporates guided breathing animations to align your breath with the mantra lines. Proper breathing is essential for a mindful and effective recitation experience. Here’s how the pattern works:  
+
+### Mantra Lines and Breathing  
+
+1. **Line 1 - "णमो अरिहंताणं"**  
+   - **Breath Action**: Inhale deeply.  
+   - Focus your energy on absorbing positive vibrations of enlightened beings.  
+
+2. **Line 2 - "णमो सिद्धाणं"**  
+   - **Breath Action**: Exhale slowly.  
+   - Release any negativity and feel gratitude for liberated souls.  
+
+3. **Line 3 - "णमो आयरियाणं"**  
+   - **Breath Action**: Inhale deeply.  
+   - Draw in the virtues of spiritual teachers guiding the path to salvation.  
+
+4. **Line 4 - "णमो उवज्जायाणं"**  
+   - **Breath Action**: Exhale slowly.  
+   - Let go of distractions and connect with the teachings of mentors.  
+
+5. **Line 5 - "णमो लोए सव्वसाहूणं"**  
+   - **Breath Action**:  
+      - **First Half**: Inhale deeply.  
+      - **Second Half**: Exhale completely.  
+   - Embrace universal reverence for all virtuous beings and feel complete alignment with the mantra’s essence.  
+
+---
+
+### Why This Breathing Pattern?  
+
+1. **Mind-Body Connection**: Inhaling aligns with receiving positive energy, while exhaling aligns with releasing negativity.  
+2. **Focus on Virtue**: The rhythm emphasizes mindfulness for each line’s meaning.  
+3. **Calmness**: Longer breaths in the last line encourage deeper relaxation.  
+4. **Enhanced Awareness**: Alternating breathing patterns sharpen focus and improve your ability to stay present.  
+
+By following this breathing pattern during the recitation, you create a holistic experience that integrates body, mind, and spirit, deepening the impact of the Namokar Mantra.
+---
+
 ## 💡 Future Enhancements  
 
 We’re continuously improving! Planned updates include:  
